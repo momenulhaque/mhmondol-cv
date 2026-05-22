@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Momenul Haque Mondol</title>
+<style>
+:root{--bg:#f7f5f1;--sf:#fff;--tx:#1a1a2e;--mt:#4a4a6a;--ac:#1a365d;--acl:#e8eef6;--br:#ddd8ce;--sb:#0d1b2a;--hf:Georgia,'Times New Roman',serif;--bf:'Trebuchet MS',system-ui,sans-serif}
+.t-min{--bg:#f9fafb;--sf:#fff;--tx:#111827;--mt:#4b5563;--ac:#0f766e;--acl:#ccfbf1;--br:#e5e7eb;--sb:#111827;--hf:'Palatino Linotype',Palatino,serif;--bf:'Segoe UI',system-ui,sans-serif}
+.t-dark{--bg:#1c1917;--sf:#28211e;--tx:#f5f0e8;--mt:#c5bfbb;--ac:#d97706;--acl:#1a140a;--br:#44403c;--sb:#12100e;--hf:Georgia,serif;--bf:system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--bf);font-size:16px;line-height:1.7}
+#bar{position:sticky;top:0;background:var(--sb);color:#ddd;padding:9px 18px;display:flex;align-items:center;gap:8px;z-index:100;flex-wrap:wrap}
+.btit{font-family:Georgia,serif;font-size:13px;color:#fff;font-weight:700;margin-right:auto}
+.bb{background:transparent;border:1px solid rgba(255,255,255,.3);color:#ccc;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px;font-family:inherit}
+.bb:hover{background:rgba(255,255,255,.1)}.bb.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.bsep{width:1px;height:18px;background:rgba(255,255,255,.2)}
+#citbar{font-size:11px;color:#8ea8c3;padding:0 4px}
+#content{max-width:960px;margin:0 auto;padding:32px 36px}
+.cvhd{text-align:center;padding-bottom:28px;border-bottom:2px solid var(--ac);margin-bottom:28px}
+.cvnm{font-family:var(--hf);font-size:38px;color:var(--ac);font-weight:700}
+.cvst{font-size:12px;color:var(--mt);margin:7px 0 14px;letter-spacing:1.5px;text-transform:uppercase}
+.cvct{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;font-size:13px}
+.cvct a{color:var(--ac)}
+.sh{display:flex;align-items:center;justify-content:space-between;margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--ac)}
+.st{font-family:var(--hf);font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}
+.sst{font-family:var(--hf);font-size:14px;font-style:italic;color:var(--ac);margin:14px 0 8px;border-left:3px solid var(--ac);padding-left:10px}
+.ent{background:var(--sf);border:1px solid var(--br);border-radius:6px;padding:13px 15px;margin-bottom:9px;position:relative}
+.er{display:flex;gap:15px}.ep{font-size:12px;color:var(--mt);white-space:nowrap;min-width:128px;padding-top:2px}
+.et{font-weight:600;font-size:16px;margin-bottom:3px}.es{font-size:15px;color:var(--mt);margin-bottom:3px}.en{font-size:14px;color:var(--mt)}
+.pub{background:var(--sf);border:1px solid var(--br);border-left:3px solid var(--ac);border-radius:0 6px 6px 0;padding:11px 13px;margin-bottom:9px}
+.pa{font-size:14px;color:var(--mt);margin-bottom:3px}
+.pt{font-weight:600;font-size:15px;font-style:italic;margin-bottom:3px}
+.pv{font-size:15px;margin-bottom:6px}
+.pm{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.bdg{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600}
+.bc{background:var(--acl);color:var(--ac)}.bst{background:#fef3c7;color:#92400e}
+.pcon{font-size:14px;color:var(--mt);font-style:italic;margin-top:5px}
+.at{width:100%;border-collapse:collapse;font-size:15px}
+.at th{text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--mt);padding:7px 10px;border-bottom:1px solid var(--br)}
+.at td{padding:7px 10px;border-bottom:1px solid var(--br);vertical-align:top}
+.at tr:last-child td{border-bottom:none}.at tr:hover td{background:var(--acl)}
+.pe{padding:9px 13px;border-bottom:1px solid var(--br)}.pe:last-child{border-bottom:none}
+.pty{font-size:11px;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.5px}
+.pti{font-size:13px;font-weight:600;margin:2px 0}.pve{font-size:12px;color:var(--mt)}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sgc{background:var(--sf);border:1px solid var(--br);border-radius:6px;padding:13px}
+.sgc h4{font-family:var(--hf);font-size:12px;color:var(--ac);text-transform:uppercase;letter-spacing:1px;margin-bottom:9px}
+.stag{display:inline-block;background:var(--acl);color:var(--tx);font-size:12px;padding:3px 10px;border-radius:12px;margin:2px 2px 2px 0}
+.ebt{background:transparent;border:1px dashed var(--ac);color:var(--ac);font-size:11px;padding:2px 7px;border-radius:3px;cursor:pointer;display:none}
+.ebt:hover{background:var(--ac);color:#fff}
+.dbt{background:transparent;border:1px dashed #dc2626;color:#dc2626;font-size:11px;padding:2px 7px;border-radius:3px;cursor:pointer;display:none;margin-left:3px}
+.dbt:hover{background:#dc2626;color:#fff}
+.mode-edit .ebt,.mode-edit .dbt{display:inline}
+.addbtn{background:var(--ac);border:none;color:#fff;font-size:12px;padding:4px 12px;border-radius:4px;cursor:pointer;display:none}
+.mode-edit .addbtn,.mode-edit .addrow{display:block}
+.addrow{display:none;margin:6px 0}
+.ep2{background:var(--acl);border:1px dashed var(--ac);border-radius:4px;padding:11px;margin:7px 0;display:none}
+.ep2 textarea{width:100%;min-height:120px;font-family:monospace;font-size:12px;padding:8px;background:var(--sf);color:var(--tx);border:1px solid var(--br);border-radius:4px;resize:vertical}
+.ep2 .sv{background:var(--ac);color:#fff;border:none;padding:5px 14px;border-radius:4px;cursor:pointer;margin-top:7px;font-size:13px}
+.ep2 .ca{background:transparent;color:var(--mt);border:1px solid var(--br);padding:5px 11px;border-radius:4px;cursor:pointer;margin:7px 0 0 7px;font-size:13px}
+#ppanel{display:none;background:var(--sf);border:2px solid var(--ac);border-radius:8px;max-width:880px;margin:0 auto 30px;padding:22px 26px}
+#ppanel h3{font-family:var(--hf);font-size:16px;color:var(--ac);margin-bottom:14px}
+.ptabs{display:flex;gap:0;margin-bottom:16px;border-bottom:2px solid var(--br)}
+.ptab{background:transparent;border:none;padding:7px 16px;cursor:pointer;font-size:13px;color:var(--mt);font-family:inherit;border-bottom:2px solid transparent;margin-bottom:-2px}
+.ptab.on{color:var(--ac);border-bottom-color:var(--ac);font-weight:600}
+.pf input,.pf textarea,.pf select{width:100%;padding:7px 10px;background:var(--bg);color:var(--tx);border:1px solid var(--br);border-radius:4px;font-family:inherit;font-size:13px;box-sizing:border-box}
+.pf textarea{min-height:80px;resize:vertical}
+.pf label{font-size:11px;color:var(--mt);display:block;margin:0 0 3px;text-transform:uppercase;letter-spacing:.5px}
+.pf .fg{margin-bottom:10px}
+.prow2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.doi-row{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.doi-row input{flex:1}
+.pfetch{background:var(--ac);color:#fff;border:none;padding:7px 14px;border-radius:4px;cursor:pointer;font-size:13px;white-space:nowrap}
+.pfetch:disabled{opacity:.5;cursor:not-allowed}
+#dsts{font-size:12px;padding:6px 10px;border-radius:4px;display:none;margin-bottom:10px}
+#dsts.ok{background:#ecfdf5;color:#065f46;display:block}
+#dsts.err{background:#fef2f2;color:#991b1b;display:block}
+.pact{display:flex;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--br)}
+.psave{background:var(--ac);color:#fff;border:none;padding:7px 20px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:600}
+.pcanc{background:transparent;color:var(--mt);border:1px solid var(--br);padding:7px 14px;border-radius:4px;cursor:pointer;font-size:13px}
+.subsel{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.subselbtn{background:var(--bg);border:1px solid var(--br);color:var(--mt);padding:4px 12px;border-radius:14px;cursor:pointer;font-size:12px;font-family:inherit}
+.subselbtn.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media print{
+  #bar,#ppanel{display:none!important}
+  body{background:#fff!important}
+  .cvnm{color:#1a365d!important}
+  .ebt,.dbt,.addbtn,.addrow{display:none!important}
+  .pub,.ent,.pe{break-inside:avoid}
+}
+</style>
+</head>
+<body id="cvr">
+
+<div id="bar">
+  <span class="btit">CV — Momenul Haque Mondol</span>
+  <span id="citbar"></span>
+  <div class="bsep"></div>
+  <button class="bb on" onclick="setTh(this,'')">Academic Navy</button>
+  <button class="bb" onclick="setTh(this,'t-min')">Minimal Teal</button>
+  <button class="bb" onclick="setTh(this,'t-dark')">Dark Scholar</button>
+  <div class="bsep"></div>
+  <button class="bb" id="editbtn" onclick="togEdit(this)">&#9998; Edit Mode</button>
+  <button class="bb" onclick="window.print()">&#128438; Print / PDF</button>
+  <button class="bb" onclick="expJSON()">&#8595; Export JSON</button>
+  <button class="bb" onclick="document.getElementById('impf').click()">&#8593; Import JSON</button>
+  <input type="file" id="impf" accept=".json" style="display:none" onchange="impJSON(this)">
+  <div class="bsep"></div>
+  <span style="color:#8ea8c3;font-size:12px">Size:</span>
+  <button class="bb" onclick="setFz(14)">S</button>
+  <button class="bb on" id="fz-m" onclick="setFz(16)">M</button>
+  <button class="bb" onclick="setFz(18)">L</button>
+  <button class="bb" onclick="setFz(20)">XL</button>
+</div>
+
+<div id="content"></div>
+
+<div id="ppanel">
+  <h3>Add Publication</h3>
+  <div class="subsel" id="subsel">
+    <button class="subselbtn on" onclick="setSub(this,'methodology')">Methodology</button>
+    <button class="subselbtn" onclick="setSub(this,'applied')">Applied</button>
+    <button class="subselbtn" onclick="setSub(this,'submitted')">Submitted / Under Review</button>
+    <button class="subselbtn" onclick="setSub(this,'ongoing')">Ongoing / In Prep</button>
+  </div>
+  <div class="ptabs">
+    <button class="ptab on" onclick="setMode(this,'doi')">DOI Lookup</button>
+    <button class="ptab" onclick="setMode(this,'manual')">Manual / JSON</button>
+  </div>
+  <div id="tab-doi">
+    <div class="doi-row">
+      <input type="text" id="doi-inp" placeholder="Paste DOI — e.g. https://doi.org/10.1002/pst.70022 or just 10.1002/...">
+      <button class="pfetch" id="fetchbtn" onclick="lookupDOI()">Fetch Details</button>
+    </div>
+    <div id="dsts"></div>
+    <div class="pf">
+      <div class="fg"><label>Authors</label><input type="text" id="f-authors" placeholder="Mondol, M.H. &amp; Karim, M.E."></div>
+      <div class="fg"><label>Title</label><textarea id="f-title" rows="2" placeholder="Full paper title"></textarea></div>
+      <div class="prow2">
+        <div class="fg"><label>Journal / Venue</label><input type="text" id="f-journal" placeholder="Journal Name"></div>
+        <div class="fg"><label>Year</label><input type="number" id="f-year" placeholder="2026"></div>
+      </div>
+      <div class="prow2">
+        <div class="fg"><label>Volume / Issue / Pages</label><input type="text" id="f-vol" placeholder="24(5), pp. 100-110"></div>
+        <div class="fg"><label>DOI URL</label><input type="text" id="f-doi" placeholder="https://doi.org/..."></div>
+      </div>
+      <div id="sub-status-row" style="display:none">
+        <div class="fg"><label>Status (submitted / ongoing)</label><input type="text" id="f-status" placeholder="Under review · Submission ID: ..."></div>
+      </div>
+      <div class="fg"><label>Your Contribution</label><input type="text" id="f-contrib" placeholder="Conceived the study, led analysis and writing. 90% effort."></div>
+    </div>
+  </div>
+  <div id="tab-manual" style="display:none">
+    <div class="pf">
+      <div class="fg"><label>Paste or edit JSON</label>
+        <textarea id="f-json" rows="10" style="min-height:200px;font-family:monospace;font-size:12px"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="pact">
+    <button class="psave" onclick="saveNewPub()">Add Publication</button>
+    <button class="pcanc" onclick="closePanel()">Cancel</button>
+  </div>
+</div>
+
+<script>
+var D={personal:{name:"Momenul Haque Mondol",title:"PhD Candidate · Population & Public Health (SPPH) · University of British Columbia",address:"2502 Melfa Lane, Vancouver, BC V6T 2C6, Canada",office:"1081 Burrard St, Vancouver, BC V6Z 1Y6, Canada",phone:"+1 778 798 9140",email:"mhmondol@student.ubc.ca"},education:[{period:"2022/09 – Ongoing",degree:"Ph.D. in Population and Public Health (SPPH)",institution:"University of British Columbia (UBC), Vancouver, Canada",note:"Transferred without completing M.Sc. · Avg: 88.3% (24 credits)"},{period:"2016/01 – 2016/12",degree:"M.Sc. in Applied Statistics",institution:"University of Dhaka, Bangladesh",note:"GPA 3.95/4.00 · 3rd in cohort (50 students)"},{period:"2012/01 – 2015/12",degree:"B.Sc. (Hon's) in Applied Statistics",institution:"University of Dhaka, Bangladesh",note:"CGPA 3.85/4.00 · 5th in cohort (60 students)"}],awards:[{name:"Four Year Doctoral Fellowship",authority:"University of British Columbia",amount:"~CAD 18,000/yr + tuition",competitive:"Yes (institutional)",occasion:"UBC's best PhD students; 2024–2027"},{name:"President's Academic Excellence Initiative Award",authority:"University of British Columbia",amount:"~CAD 1,500/yr",competitive:"Yes (institutional)",occasion:"Significant research contributions; 2024–2027"},{name:"International Tuition Award",authority:"University of British Columbia",amount:"~CAD 3,200/yr",competitive:"No",occasion:"International student at UBC, 2022–2025"},{name:"Travel Grant",authority:"World Bank & ISI",amount:"~CAD 2,700",competitive:"Yes (international)",occasion:"62nd ISI World Statistics Congress, Kuala Lumpur, 2019"},{name:"National Science and Technology Fellowship",authority:"Ministry of Science & Technology, Bangladesh",amount:"~CAD 820",competitive:"Yes (national)",occasion:"Innovative M.Sc. thesis, 2016"},{name:"Dean's Award (Gold Medal)",authority:"Faculty of Science, University of Dhaka",amount:"Gold medal",competitive:"Yes (faculty)",occasion:"Commendable B.Sc. result, 2015"},{name:"Merit Scholarships",authority:"ISRT, Dhaka University",amount:"~CAD 100/yr",competitive:"Yes (institutional)",occasion:"Outstanding GPA, 2013–2015"},{name:"Board Scholarship",authority:"Education Board, Dhaka",amount:"~CAD 160",competitive:"Yes (divisional)",occasion:"Secondary School Certificate, 2010–2011"},{name:"Junior School Scholarship",authority:"Education Board, Dhaka",amount:"~CAD 110",competitive:"Yes (divisional)",occasion:"Junior School Certificate, 2008–2009"},{name:"Primary School Scholarship",authority:"Education Board, Dhaka",amount:"~CAD 120",competitive:"Yes (divisional)",occasion:"Primary School Certificate, 2005–2007"}],publications:{methodology:[{authors:"Karim, M.E. & Mondol, M.H.",year:2025,title:"Finding the optimal number of splits and repetitions in double cross-fitting targeted maximum likelihood estimators",journal:"Pharmaceutical Statistics",vol:"24(5), e70022",doi:"https://doi.org/10.1002/pst.70022",citations:1,contribution:"Performed analyses, developed & validated R package; critical feedback. 30% effort."},{authors:"Mondol, M.H. & Karim, M.E.",year:2024,title:"Towards Robust Causal Inference in Epidemiological Research: Employing Double Cross-fit TMLE in Right Heart Catheterization Data",journal:"American Journal of Epidemiology",vol:"kwae447",doi:"https://doi.org/10.1093/aje/kwae447",citations:6,contribution:"Designed study, performed analyses, developed & validated R package, wrote initial draft. 90% effort."},{authors:"Mondol, M.H., Rahman, M.S., Bari, W.",year:2022,title:"A penalized likelihood approach for dealing with separation in count data regression model",journal:"Communications in Statistics: Simulation and Computation",vol:"pp. 1–15",doi:"https://doi.org/10.1080/03610918.2022.2057541",citations:2,contribution:"Conceived study, derived methodology, designed simulations, wrote first draft. 90% effort."},{authors:"Mondol, M.H. & Rahman, M.S.",year:2019,title:"Bias-reduced and separation-proof GEE with small or sparse longitudinal binary data",journal:"Statistics in Medicine",vol:"38(14), pp. 2544–2560",doi:"https://doi.org/10.1002/sim.8126",citations:28,contribution:"Derived methodology, designed simulations, wrote first draft. 90% effort."},{authors:"Mondol, M.H. & Rahman, M.S.",year:2017,title:"A comparison of internal validation methods for validating predictive models for binary data with rare events",journal:"Journal of Statistical Research",vol:"51, pp. 131–144",doi:"http://jsr.isrt.ac.bd/article/comparison-internal-validation-methods-validating-predictive-models-binary-data-rare-events/",citations:15,contribution:"Derived methodology, designed simulations, wrote first draft. 90% effort."}],applied:[{authors:"Mondol, M.H., Min, J.E., Zanette, M., Socias, M.E., et al.",year:2025,title:"Effectiveness of slow-release oral morphine versus other OAT regimens in key sub-populations: Protocol for population-based target trial emulation",journal:"medRxiv (Preprint)",vol:"",doi:"https://doi.org/10.64898/2025.11.30.25341316",citations:0,contribution:"Principal role in design, analysis, and writing."},{authors:"Mondol, M.H., Min, J.E., Kurz, M., Zanette, M., Hossain, M.B., et al.",year:2025,title:"Comparative effectiveness of missed dose protocols of opioid agonist treatment in BC, Canada: protocol for a population-based target trial emulation",journal:"BMJ Open",vol:"15(7), e098318",doi:"https://doi.org/10.1136/bmjopen-2024-098318",citations:0,contribution:"Conceived statistical approach, led writing. 90% effort."},{authors:"Mukhopadhyay, A., Mondol, M.H., Rahman, M., et al.",year:2024,title:"The direct and urinary electrolyte-mediated effects of ambient temperature on population blood pressure: A causal mediation analysis",journal:"Environment International",vol:"p. 109208",doi:"https://doi.org/10.1016/j.envint.2024.109208",citations:5,contribution:"Created base dataset, critical methodological feedback. 20% effort."},{authors:"Mazumder, H., Mondol, M.H., Rahman, M., et al.",year:2024,title:"Sex-specific association of ambient temperature with urine biomarkers in Southwest Coastal Bangladesh",journal:"Kidney International Reports",vol:"9(6), pp. 1860–1875",doi:"https://doi.org/10.1016/j.ekir.2024.03.002",citations:2,contribution:"Developed base dataset, methodological feedback. 20% effort."},{authors:"Parvez, S.M., Rahman, M.J., Mondol, M.H., et al.",year:2021,title:"Achieving equitable uptake of handwashing and sanitation by addressing supply and demand constraints: RCT in rural Bangladesh",journal:"International Journal for Equity in Health",vol:"20(1), pp. 1–11",doi:"https://doi.org/10.1186/s12939-020-01353-7",citations:18,contribution:"Prepared key variables, performed analysis. 20% effort."},{authors:"Doza, S., Naser, A.M., Mondol, M.H., et al.",year:2020,title:"Microbiological water quality of Managed Aquifer Recharge systems in SW coastal Bangladesh",journal:"bioRxiv (Preprint)",vol:"",doi:"https://doi.org/10.1101/2020.03.02.972372",citations:6,contribution:"Prepared variables, conducted analyses. 20% effort."},{authors:"Amin, N., Rahman, M., Mondol, M.H., et al.",year:2019,title:"Quantitative assessment of fecal contamination in multiple environmental sample types in Dhaka using SaniPath",journal:"PLoS ONE",vol:"14(12), e0221193",doi:"https://doi.org/10.1371/journal.pone.0221193",citations:68,contribution:"Statistician: prepared analytic data, analyzed, wrote analysis section."},{authors:"Amin, N., Raj, S., Mondol, M.H., et al.",year:2018,title:"Who is safe; rich or poor? A SaniPath exposure pathway assessment in Dhaka city",journal:"Am J Trop Med Hyg (Conference Poster)",vol:"99(4), p. 196",doi:"",citations:0,contribution:"Statistician: prepared analytic data, analyzed, wrote analysis section."}],submitted:[{authors:"Mondol, M.H., Min, J.E., Zanette, M., Hossain, M.B., Kurz, M., et al.",year:2026,title:"Comparative effectiveness of missed dose management for methadone and buprenorphine/naloxone in BC, Canada: population-based target trial emulation",journal:"Annals of Internal Medicine",status:"Under review · ANNALS-26-01392 (submitted 30 Mar 2026)",contribution:"Conceived statistical analysis, designed study, conducted analyses, led writing. 90% effort."},{authors:"Khan, R., Mondol, M.H., Rahman, M., et al.",year:2025,title:"Ambient temperature and hypohydration, urinary electrolytes, creatinine, and total protein excretions — coastal Bangladesh",journal:"Environmental Advances",status:"Under review · ENVADV-D-25-00336",contribution:"Statistician: prepared analytic data, analyzed, made tables and figures."}],ongoing:[{authors:"Mondol, M.H., Min, J.E., Zanette, M., Kurz, M., et al.",year:null,title:"What constitutes safe and effective dose titration of opioid agonist treatment? A population-based observational study protocol in BC, Canada",journal:"BMJ Open (target)",status:"Under internal review; yet to submit",contribution:"Principal role in design, analysis, and writing."}]},projects:[{title:"Developing an Epidemiological Tool for Early Detection: A Risk Prediction Algorithm for Prodromal Multiple Sclerosis",funding:"Canadian Institutes of Health Research (CIHR)",duration:"Sep 2024 – Aug 2025",amount:"CAD 153,000",competitive:"Yes (national)",status:"Ongoing",contribution:"Co-applicant in grant proposal."},{title:"Associated factors to cesarean delivery among married women in Bangladesh: analysis of Bangladesh MICS",funding:"Research Support & Publication Division, UGC, Bangladesh",duration:"Jan 2022 – Oct 2022",amount:"~CAD 3,325",competitive:"Yes (institutional)",status:"Completed",contribution:"Principal Investigator: drafted proposal, conducted analysis, wrote final report."}],software:[{name:"crossfit",type:"R package",description:"Apply sample splitting (cross-fit) to AIPW and TMLE in causal inference.",doi:"https://doi.org/10.5281/zenodo.7503036"},{name:"geefirth",type:"R package",description:"Fit GEE for separated or near-to-separated longitudinal binary data.",doi:"https://doi.org/10.5281/zenodo.7491370"},{name:"firthGP",type:"R package",description:"Fit generalized Poisson regression for separated or near-to-separated count data.",doi:"https://doi.org/10.5281/zenodo.7496292"},{name:"mySummary",type:"R package",description:"Basic summary statistics for single or multiple variables.",doi:"https://doi.org/10.5281/zenodo.7491377"},{name:"Life Expectancy Explorer",type:"Shiny App",description:"Interactive exploration of world life expectancy from 1952 to 2007.",doi:"https://mhmondol.shinyapps.io/Assignment_B4/"}],presentations:{conference:[{type:"Invited Speaker · National",venue:"CSAM-SMCA 2026 Scientific Conference",location:"Calgary, AB",date:"Nov 19–21, 2026",title:"Emulating population-based target trials to support the clinical management of opioid use disorder"},{type:"Poster · National",venue:"38th Annual Health Policy Conference, CHSPR · UBC",location:"Vancouver, BC",date:"Mar 12–13, 2026",title:"Comparative effectiveness of missed dose management for methadone and buprenorphine/naloxone in BC, Canada"},{type:"E-Poster · National",venue:"Issues of Substance Conference 2025, CCSA",location:"Halifax, NS",date:"Nov 17–19, 2025",title:"Comparative Effectiveness of Missed Dose Protocols of Opioid Agonist Treatment in BC: A Target Trial Emulation"},{type:"Invited Speaker · International",venue:"2025 WNAR/IMS Annual Meeting",location:"Whistler, BC",date:"Jun 15–18, 2025",title:"Towards robust causal inference: Employing double cross-fit TMLE in right heart catheterization data"},{type:"Invited Speaker · International",venue:"Digital Public Health Seminar Series, DiSHI/BC CDC",location:"Virtual",date:"Jul 10, 2024",title:"Decoding Machine Learning for Public Health Research: Case Studies from Epidemiologic Research"},{type:"Oral Presentation · International",venue:"62nd ISI World Statistics Congress",location:"Kuala Lumpur, Malaysia",date:"2019",title:"A solution to separation in Poisson regression for small or sparse count data"},{type:"Oral Presentation · National",venue:"2nd Intl Conference on Theory & Applications of Statistics, DUSDAA",location:"Dhaka, Bangladesh",date:"Dec 27–29, 2015",title:"Validating a Risk Prediction Model"}],seminar:[{venue:"CHSPR Student Seminar, SPPH, UBC",date:"May 9, 2025",type:"Institutional",title:"Target trial emulations to optimize key clinical questions for opioid use disorder management"},{venue:"Data Science in Epidemiology Journal Club, SPPH, UBC",date:"Oct 17, 2024",type:"Institutional",title:"Dose adjustment strategies after missed opioid agonist treatment doses in BC, Canada"},{venue:"BC CDC (Virtual)",date:"Jul 10, 2024",type:"Institutional",title:"Decoding Machine Learning for Public Health Research: Case Studies from Epidemiologic Research"},{venue:"SPPH, UBC",date:"Nov 9, 2023",type:"Institutional",title:"Low Sodium Intake and All-Cause Mortality Among Adults in the United States from 1999 to 2018"},{venue:"Data Science in Epidemiology Journal Club, SPPH, UBC",date:"Dec 15, 2023",type:"Institutional",title:"Opioid agonist treatment discontinuation and its reversion strategies in BC, Canada"},{venue:"EIU, IDD, icddr,b",date:"Nov 22, 2017",type:"Professional Workshop",title:"Sample size determination in public health research"},{venue:"ISRT, University of Dhaka",date:"Apr 2, 2017",type:"Institutional",title:"Bias reduced and separation-proof Generalized Estimating Equation"},{venue:"ISRT, University of Dhaka",date:"Aug 25, 2015",type:"Institutional",title:"Validating a risk predictive model: A logistic regression approach"}]},theses:[{degree:"M.Sc.",title:"Bias reduced and separation-proof Generalized Estimating Equation for correlated binary data",institution:"ISRT, University of Dhaka, Bangladesh",year:2016,supervisor:"Dr. M. Shafiqur Rahman, Professor of Applied Statistics, ISRT, University of Dhaka"},{degree:"B.Sc.",title:"Validating a Risk Prediction Model",institution:"ISRT, University of Dhaka, Bangladesh",year:2015,supervisor:"Dr. M. Shafiqur Rahman, Professor of Applied Statistics, ISRT, University of Dhaka"}],experience:{research:[{period:"2023/09 – Ongoing",title:"Research Assistant",org:"Health Economic Research Unit (HERU), Centre for Advancing Health Outcomes, Vancouver, BC",hours:"12 hr/week",details:"Working on target trial emulations to optimize key clinical questions for the management of opioid use disorder.",supervisor:"Dr. Bohdan Nosyk, Professor of Health Science, SFU"},{period:"2023/05 – 2023/08",title:"Work Learn Researcher",org:"SPPH, University of British Columbia, Vancouver",hours:"17 hr/week",details:"Applied machine learning in health data; causal inference with time-dependent covariates.",supervisor:"Dr. Ehsan Karim, Assistant Professor, SPPH, UBC"},{period:"2022/09 – 2023/04",title:"Graduate Research Assistant",org:"SPPH, University of British Columbia, Vancouver",hours:"12 hr/week",details:"Explored performance of double cross-fitting and cross-validation techniques for causal inference from observational studies.",supervisor:"Dr. Ehsan Karim, Assistant Professor, SPPH, UBC"},{period:"2017/07 – 2018/09",title:"Statistician / Research Fellow & Senior Research Assistant",org:"International Centre for Diarrheal Disease Research, Bangladesh (icddr,b), Dhaka",hours:"Full time",details:"Designing public health studies, sample size determination, preparing analytic data, data analysis, interpreting and reporting.",supervisor:""}],teaching:[{period:"2020/12 – 2022/08",title:"Assistant Professor",org:"Department of Statistics, University of Barishal, Bangladesh",hours:"Full time",details:"Instructed statistical courses at undergraduate and graduate level; conducted exams and evaluated scripts."},{period:"2018/10 – 2020/11",title:"Lecturer",org:"Department of Statistics, University of Barishal, Bangladesh",hours:"Full time",details:"Instructed statistical courses at undergraduate and graduate level; conducted exams and evaluated scripts."}]},courses:[{code:"STAT 303",name:"Design and Analysis of Experiments",year:"2021",hours:"60h theory",students:30},{code:"STAT 304",name:"Categorical Data Analysis",year:"2021",hours:"45h theory",students:30},{code:"STAT 308",name:"Epidemiology and Bioinformatics",year:"2021",hours:"45h theory",students:30},{code:"STAT 201",name:"Probability Distribution and its Applications",year:"2020, 2021",hours:"120h theory",students:60},{code:"STAT 204",name:"Sampling Technique I",year:"2020, 2021",hours:"90h theory",students:60},{code:"STAT 205",name:"Demography",year:"2020",hours:"45h theory",students:30},{code:"STAT 207",name:"Actuarial Statistics",year:"2020",hours:"45h theory",students:30},{code:"STAT 101",name:"Basic Statistics",year:"2019–2021",hours:"135h theory",students:90},{code:"STAT 104",name:"Linear, Matrix, and Basic Algebra",year:"2019",hours:"60h theory + 10h practical",students:30},{code:"STAT 105",name:"Introduction to Computer and C++",year:"2019",hours:"45h theory + 20h practical",students:30}],training:[{date:"Jul 15, 2024",title:"Workshop: Target Trial Emulation — Miguel Hernan"},{date:"Mar 14, 2024",title:"PHC privacy and confidentiality training for new employees (NEO)"},{date:"Feb 2, 2024",title:"Privacy training for VCH PHC researchers"},{date:"Apr 26, 2023",title:"New worker safety orientation at UBC"},{date:"Apr 26, 2023",title:"Preventing and addressing workplace bullying and harassment at UBC"},{date:"Apr 25, 2023",title:"Privacy and information security fundamentals (Parts 1 & 2) at UBC"},{date:"Apr 25, 2023",title:"Workplace violence prevention strategy at UBC"},{date:"Dec 1, 2022",title:"UBC ARC Sockeye — Introduction to new users"},{date:"Dec 3, 2017",title:"Endnote X8 training at icddr,b"}],skills:{computing:["UBC ARC Sockeye (Expert)"],analysis:["R (Expert)","SAS (Expert)","STATA (Expert)","SPSS (Intermediate)","MATLAB (Intermediate)"],reporting:["R Markdown (Expert)","R Shiny (Expert)","LaTeX / TexStudio (Expert)","MS Office (Expert)"]},leadership:[{period:"2023/09 – Ongoing",role:"Khateeb (Leader), UBC Muslim Community",org:"Muslim Student Association, UBC, Vancouver",details:"Lead weekly congregational prayer of the UBC Muslim community."},{period:"2019/01 – 2022/08",role:"Convener, Co-curricular Activities Committee",org:"Dept. of Statistics, University of Barishal, Bangladesh",details:"Organized football, cricket, and badminton competitions."},{period:"2019/01 – 2022/08",role:"Member, Purchase Committee",org:"Dept. of Statistics, University of Barishal, Bangladesh",details:"Procured furniture, lab equipment, and library books per public procurement rules."},{period:"2020/01 – 2022/08",role:"Convener, Financial Committee",org:"Dept. of Statistics, University of Barishal, Bangladesh",details:"Managed and monitored income and expenditures."}],administrative:[{period:"2018/10 – 2022/08",role:"Student Advisor",org:"Dept. of Statistics, University of Barishal, Bangladesh",details:"Advised and supervised students on academic and non-academic matters."},{period:"2018/10 – 2022/08",role:"Examination Committee Chair (Session 2019–2020)",org:"Dept. of Statistics, University of Barishal, Bangladesh",details:"Played principal role in conducting exams and preparing results."}],memberships:[{org:"International Statistical Society Institute (ISI)",role:"Student Member",period:"2017–2020"},{org:"International Biometric Society (IBS)",role:"Student Member",period:"2018–2020"}]};
+
+var EDIT_MODE=false,CUR_SUB='methodology',CUR_MODE='doi';
+var PUB_TMPL={methodology:{authors:"Author, A. & Author, B.",year:2026,title:"Paper title",journal:"Journal Name",vol:"Vol(Issue), pp. X–Y",doi:"https://doi.org/...",citations:0,contribution:"Your contribution. N% effort."},applied:{authors:"Author, A., et al.",year:2026,title:"Paper title",journal:"Journal Name",vol:"Vol(Issue), pp. X–Y",doi:"https://doi.org/...",citations:0,contribution:"Your contribution."},submitted:{authors:"Author, A., et al.",year:2026,title:"Paper title",journal:"Target Journal",status:"Under review · Submission ID",contribution:"Your contribution. N% effort."},ongoing:{authors:"Author, A., et al.",year:null,title:"Paper title",journal:"Target Journal (planned)",status:"In preparation",contribution:"Your role."}};
+
+function x(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function setTh(b,c){document.body.className=c;document.querySelectorAll('#bar .bb').forEach(function(e){e.classList.remove('on')});b.classList.add('on')}
+function togEdit(b){EDIT_MODE=document.body.classList.toggle('mode-edit');b.classList.toggle('on',EDIT_MODE);b.textContent=EDIT_MODE?'Exit Edit':'Edit Mode'}
+function expJSON(){var b=new Blob([JSON.stringify(D,null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='cv-mondol.json';a.click()}
+function impJSON(inp){var f=inp.files[0];if(!f)return;var r=new FileReader();r.onload=function(e){try{D=JSON.parse(e.target.result);render();fetchCitations();alert('Imported!');}catch(e){alert('Invalid JSON: '+e.message);}};r.readAsText(f)}
+
+function openPanel(id,data){var p=document.getElementById(id);if(!p)return;var vis=p.style.display==='block';p.style.display=vis?'none':'block';if(!vis)p.querySelector('textarea').value=JSON.stringify(data,null,2)}
+function closeP(id){document.getElementById(id).style.display='none'}
+function saveP(id,fn){var p=document.getElementById(id);try{var v=JSON.parse(p.querySelector('textarea').value);fn(v);p.style.display='none';render();fetchCitations();}catch(e){alert('Invalid JSON: '+e.message)}}
+function delPub(sub,idx){if(!confirm('Delete this publication?'))return;D.publications[sub].splice(idx,1);render();fetchCitations()}
+
+function openAddPanel(sub){
+  CUR_SUB=sub||'methodology';
+  document.querySelectorAll('.subselbtn').forEach(function(b){b.classList.toggle('on',b.textContent.toLowerCase().indexOf(CUR_SUB.substring(0,4))>-1)});
+  document.getElementById('sub-status-row').style.display=(CUR_SUB==='submitted'||CUR_SUB==='ongoing')?'block':'none';
+  document.getElementById('f-json').value=JSON.stringify(PUB_TMPL[CUR_SUB],null,2);
+  clearDOIForm();
+  document.getElementById('ppanel').style.display='block';
+  document.getElementById('ppanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function closePanel(){document.getElementById('ppanel').style.display='none';clearDOIForm()}
+function clearDOIForm(){
+  ['doi-inp','f-authors','f-year','f-title','f-journal','f-vol','f-doi','f-status','f-contrib'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''});
+  var s=document.getElementById('dsts');s.className='';s.style.display='none';s.textContent='';
+}
+function setSub(b,sub){
+  CUR_SUB=sub;
+  document.querySelectorAll('.subselbtn').forEach(function(e){e.classList.remove('on')});b.classList.add('on');
+  document.getElementById('sub-status-row').style.display=(sub==='submitted'||sub==='ongoing')?'block':'none';
+  document.getElementById('f-json').value=JSON.stringify(PUB_TMPL[sub],null,2);
+}
+function setMode(b,mode){
+  CUR_MODE=mode;
+  document.querySelectorAll('.ptab').forEach(function(e){e.classList.remove('on')});b.classList.add('on');
+  document.getElementById('tab-doi').style.display=mode==='doi'?'block':'none';
+  document.getElementById('tab-manual').style.display=mode==='manual'?'block':'none';
+}
+function extractDOI(s){return s.replace(/^https?:\/\/(dx\.)?doi\.org\//i,'').trim()}
+
+async function lookupDOI(){
+  var raw=document.getElementById('doi-inp').value.trim();
+  if(!raw){alert('Please paste a DOI first');return}
+  var doi=extractDOI(raw);
+  var btn=document.getElementById('fetchbtn');
+  var sts=document.getElementById('dsts');
+  btn.disabled=true;btn.textContent='Fetching...';
+  sts.className='';sts.style.display='none';
+  try{
+    var r=await fetch('https://api.semanticscholar.org/graph/v1/paper/DOI:'+encodeURIComponent(doi)+'?fields=title,authors,year,journal,publicationVenue,citationCount');
+    if(!r.ok)throw new Error('Paper not found (status '+r.status+'). Try Manual mode for preprints.');
+    var d=await r.json();
+    var authors=d.authors&&d.authors.length?d.authors.map(function(a){return a.name}).join(', '):'';
+    var journal=(d.journal&&d.journal.name)||(d.publicationVenue&&d.publicationVenue.name)||'';
+    var vol='';if(d.journal){if(d.journal.volume)vol+=d.journal.volume;if(d.journal.pages)vol+=(vol?', ':'')+d.journal.pages}
+    document.getElementById('f-authors').value=authors;
+    document.getElementById('f-year').value=d.year||'';
+    document.getElementById('f-title').value=d.title||'';
+    document.getElementById('f-journal').value=journal;
+    document.getElementById('f-vol').value=vol;
+    document.getElementById('f-doi').value='https://doi.org/'+doi;
+    sts.textContent='Found! Citations: '+(d.citationCount||0)+'. Please review fields below and add your contribution.';
+    sts.className='ok';sts.style.display='block';
+    document.getElementById('f-contrib').focus();
+  }catch(e){sts.textContent=''+e.message;sts.className='err';sts.style.display='block';}
+  btn.disabled=false;btn.textContent='Fetch Details';
+}
+
+function saveNewPub(){
+  var pub;
+  if(CUR_MODE==='manual'){try{pub=JSON.parse(document.getElementById('f-json').value)}catch(e){alert('Invalid JSON: '+e.message);return}}
+  else{
+    var authors=document.getElementById('f-authors').value.trim();
+    var title=document.getElementById('f-title').value.trim();
+    if(!authors||!title){alert('Authors and Title are required');return}
+    pub={authors:authors,year:parseInt(document.getElementById('f-year').value)||null,title:title,journal:document.getElementById('f-journal').value.trim(),vol:document.getElementById('f-vol').value.trim(),doi:document.getElementById('f-doi').value.trim()||document.getElementById('doi-inp').value.trim(),citations:0,contribution:document.getElementById('f-contrib').value.trim()};
+    var sts=document.getElementById('f-status').value.trim();if(sts)pub.status=sts;
+  }
+  D.publications[CUR_SUB].push(pub);closePanel();render();fetchCitations();
+}
+
+function citId(sub,i){return'c-'+sub.substring(0,3)+'-'+i}
+
+function pubH(p,sub,i){
+  var pid='pe-'+sub.substring(0,3)+'-'+i;
+  var h='<div class="pub">';
+  h+='<div style="float:right;display:flex;gap:3px">';
+  h+='<button class="ebt" onclick="openPanel(\''+pid+'\',D.publications.'+sub+'['+i+'])">Edit</button>';
+  h+='<button class="dbt" onclick="delPub(\''+sub+'\','+i+')">Delete</button></div>';
+  h+='<p class="pa">'+x(p.authors)+' ('+(p.year||'n/a')+')</p>';
+  h+='<p class="pt">'+x(p.title)+'</p>';
+  h+='<p class="pv"><strong>'+x(p.journal)+'</strong>'+(p.vol?', '+x(p.vol):'')+' </p>';
+  h+='<div class="pm"><span class="bdg bc" id="'+citId(sub,i)+'">Cited: '+x(p.citations)+'</span>';
+  if(p.status)h+='<span class="bdg bst">'+x(p.status)+'</span>';
+  if(p.doi&&p.doi!='#'&&p.doi!='')h+='<a href="'+x(p.doi)+'" style="font-size:11px;color:var(--ac)">DOI</a>';
+  h+='</div><p class="pcon">Contribution: '+x(p.contribution)+'</p>';
+  h+='<div class="ep2" id="'+pid+'"><textarea></textarea><div>';
+  h+='<button class="sv" onclick="saveP(\''+pid+'\',function(v){D.publications.'+sub+'['+i+']=v})">Save</button>';
+  h+='<button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>';
+  return h;
+}
+function addPubBtn(sub,label){return'<div class="addrow"><button class="addbtn" onclick="openAddPanel(\''+sub+'\')">+ Add '+label+'</button></div>'}
+
+function setFz(sz){
+  document.body.style.fontSize=sz+'px';
+  document.querySelectorAll('#bar .bb').forEach(function(b){
+    if(['S','M','L','XL'].indexOf(b.textContent)>-1)b.classList.remove('on');
+  });
+  var map={14:'S',16:'M',18:'L',20:'XL'};
+  document.querySelectorAll('#bar .bb').forEach(function(b){if(b.textContent===map[sz])b.classList.add('on')});
+}
+function render(){
+  var p=D.personal,o=[];
+  o.push('<div class="cvhd">');
+  o.push('<div class="cvnm">'+x(p.name)+'</div>');
+  o.push('<div class="cvst">'+x(p.title)+'</div>');
+  o.push('<div class="cvct"><span>'+x(p.address)+'</span><span>'+x(p.office)+'</span><span>'+x(p.phone)+'</span><span><a href="mailto:'+x(p.email)+'">'+x(p.email)+'</a></span></div>');
+  o.push('<div style="margin-top:10px"><button class="ebt" id="edit-contact-btn" onclick="openPanel(\'contact-panel\',D.personal)">Edit Contact Info</button></div>');
+  o.push('<div class="ep2" id="contact-panel"><textarea></textarea><div><button class="sv" onclick="saveP(\'contact-panel\',function(v){D.personal=v;render()})">Save</button><button class="ca" onclick="closeP(\'contact-panel\')">Cancel</button></div></div>');
+  o.push('</div>');
+
+  o.push('<div class="sh"><div class="st">Education</div></div>');
+  D.education.forEach(function(e,i){var pid='edu-'+i;
+    o.push('<div class="ent"><span style="float:right"><button class="ebt" onclick="openPanel(\''+pid+'\',D.education['+i+'])">Edit</button></span>');
+    o.push('<div class="er"><span class="ep">'+x(e.period)+'</span><div><div class="et">'+x(e.degree)+'</div><div class="es">'+x(e.institution)+'</div><div class="en">'+x(e.note)+'</div></div></div>');
+    o.push('<div class="ep2" id="'+pid+'"><textarea></textarea><div><button class="sv" onclick="saveP(\''+pid+'\',function(v){D.education['+i+']=v})">Save</button><button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>');
+  });
+
+  o.push('<div class="sh"><div class="st">Awards &amp; Scholarships</div></div>');
+  o.push('<div style="background:var(--sf);border:1px solid var(--br);border-radius:6px;overflow:hidden"><table class="at"><thead><tr><th>Award</th><th>Authority</th><th>Amount</th><th>Occasion</th></tr></thead><tbody>');
+  D.awards.forEach(function(a){o.push('<tr><td><strong>'+x(a.name)+'</strong></td><td>'+x(a.authority)+'</td><td>'+x(a.amount)+'</td><td>'+x(a.occasion)+'</td></tr>')});
+  o.push('</tbody></table></div>');
+
+  o.push('<div class="sh"><div class="st">Peer-reviewed Publications</div></div>');
+  o.push('<div class="sst">Methodology-based</div>');
+  D.publications.methodology.forEach(function(p,i){o.push(pubH(p,'methodology',i))});
+  o.push(addPubBtn('methodology','methodology publication'));
+  o.push('<div class="sst">Applied</div>');
+  D.publications.applied.forEach(function(p,i){o.push(pubH(p,'applied',i))});
+  o.push(addPubBtn('applied','applied publication'));
+  o.push('<div class="sst">Submitted &amp; under review</div>');
+  D.publications.submitted.forEach(function(p,i){o.push(pubH(p,'submitted',i))});
+  o.push(addPubBtn('submitted','submitted paper'));
+  o.push('<div class="sst">Ongoing (yet to submit)</div>');
+  D.publications.ongoing.forEach(function(p,i){o.push(pubH(p,'ongoing',i))});
+  o.push(addPubBtn('ongoing','ongoing paper'));
+
+  o.push('<div class="sh"><div class="st">Research Projects</div></div>');
+  D.projects.forEach(function(pr,i){var pid='pj-'+i;
+    o.push('<div class="ent"><span style="float:right"><button class="ebt" onclick="openPanel(\''+pid+'\',D.projects['+i+'])">Edit</button></span>');
+    o.push('<div class="et">'+x(pr.title)+'</div><div class="es">'+x(pr.funding)+' · '+x(pr.duration)+' · '+x(pr.amount)+'</div>');
+    o.push('<div class="es">Competitive: '+x(pr.competitive)+' · <span class="bdg bst">'+x(pr.status)+'</span></div>');
+    o.push('<div class="en">'+x(pr.contribution)+'</div>');
+    o.push('<div class="ep2" id="'+pid+'"><textarea></textarea><div><button class="sv" onclick="saveP(\''+pid+'\',function(v){D.projects['+i+']=v})">Save</button><button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>');
+  });
+
+  o.push('<div class="sh"><div class="st">Software</div></div>');
+  o.push('<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">');
+  D.software.forEach(function(s,i){var pid='sw-'+i;
+    o.push('<div class="ent"><span style="float:right"><span class="bdg bc">'+x(s.type)+'</span> <button class="ebt" onclick="openPanel(\''+pid+'\',D.software['+i+'])">Edit</button></span>');
+    o.push('<div class="et" style="font-family:monospace;color:var(--ac)">'+x(s.name)+'</div><div class="en" style="margin-top:4px">'+x(s.description)+'</div>');
+    if(s.doi)o.push('<a href="'+x(s.doi)+'" style="font-size:11px;color:var(--ac);word-break:break-all">'+x(s.doi)+'</a>');
+    o.push('<div class="ep2" id="'+pid+'"><textarea></textarea><div><button class="sv" onclick="saveP(\''+pid+'\',function(v){D.software['+i+']=v})">Save</button><button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>');
+  });
+  o.push('</div>');
+
+  o.push('<div class="sh"><div class="st">Conference Presentations</div></div>');
+  o.push('<div style="background:var(--sf);border:1px solid var(--br);border-radius:6px;overflow:hidden">');
+  D.presentations.conference.forEach(function(pr,i){var pid='cf-'+i;
+    o.push('<div class="pe"><span style="float:right"><button class="ebt" onclick="openPanel(\''+pid+'\',D.presentations.conference['+i+'])">Edit</button> <button class="dbt" onclick="if(confirm(\'Delete this presentation?\'))'+'{D.presentations.conference.splice('+i+',1);render()}">Delete</button></span>');
+    o.push('<div class="pty">'+x(pr.type)+' · '+x(pr.date)+'</div><div class="pti">'+x(pr.title)+'</div><div class="pve">'+x(pr.venue)+' · '+x(pr.location)+'</div>');
+    o.push('<div class="ep2" id="'+pid+'"><textarea></textarea><div><button class="sv" onclick="saveP(\''+pid+'\',function(v){D.presentations.conference['+i+']=v})">Save</button><button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>');
+  });
+  o.push('</div>');
+  o.push('<div class="addrow"><button class="addbtn" onclick="D.presentations.conference.push({type:\'Oral Presentation · National\',venue:\'Conference\',location:\'City\',date:\'YYYY\',title:\'Talk title\'});render()">+ Add conference presentation</button></div>');
+
+  o.push('<div class="sh"><div class="st">Seminar Presentations</div></div>');
+  o.push('<div style="background:var(--sf);border:1px solid var(--br);border-radius:6px;overflow:hidden">');
+  D.presentations.seminar.forEach(function(s,i){var pid='sm-'+i;
+    o.push('<div class="pe"><span style="float:right"><button class="ebt" onclick="openPanel(\''+pid+'\',D.presentations.seminar['+i+'])">Edit</button> <button class="dbt" onclick="if(confirm(\'Delete?\'))'+'{D.presentations.seminar.splice('+i+',1);render()}">Delete</button></span>');
+    o.push('<div class="pty">'+x(s.type)+' · '+x(s.date)+'</div><div class="pti">'+x(s.title)+'</div><div class="pve">'+x(s.venue)+'</div>');
+    o.push('<div class="ep2" id="'+pid+'"><textarea></textarea><div><button class="sv" onclick="saveP(\''+pid+'\',function(v){D.presentations.seminar['+i+']=v})">Save</button><button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>');
+  });
+  o.push('</div>');
+  o.push('<div class="addrow"><button class="addbtn" onclick="D.presentations.seminar.push({venue:\'Host Institution\',date:\'Mon DD, YYYY\',type:\'Institutional\',title:\'Talk title\'});render()">+ Add seminar</button></div>');
+
+  o.push('<div class="sh"><div class="st">Theses</div></div>');
+  D.theses.forEach(function(t){
+    o.push('<div class="ent"><div class="er"><span class="bdg bc" style="min-width:40px;text-align:center;flex-shrink:0">'+x(t.degree)+'</span><div><div class="et" style="font-style:italic">'+x(t.title)+'</div><div class="es">'+x(t.institution)+' · '+x(t.year)+'</div><div class="en">Supervisor: '+x(t.supervisor)+'</div></div></div></div>');
+  });
+
+  o.push('<div class="sh"><div class="st">Research Experience</div></div>');
+  D.experience.research.forEach(function(e,i){var pid='re-'+i;
+    o.push('<div class="ent"><span style="float:right"><button class="ebt" onclick="openPanel(\''+pid+'\',D.experience.research['+i+'])">Edit</button></span>');
+    o.push('<div class="er"><span class="ep">'+x(e.period)+'</span><div><div class="et">'+x(e.title)+'</div><div class="es">'+x(e.org)+(e.hours?' · '+x(e.hours):'')+' </div><div class="en">'+x(e.details)+'</div>'+(e.supervisor?'<div class="en">Supervisor: '+x(e.supervisor)+'</div>':'')+'</div></div>');
+    o.push('<div class="ep2" id="'+pid+'"><textarea></textarea><div><button class="sv" onclick="saveP(\''+pid+'\',function(v){D.experience.research['+i+']=v})">Save</button><button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>');
+  });
+
+  o.push('<div class="sh"><div class="st">Teaching Experience</div></div>');
+  D.experience.teaching.forEach(function(e,i){var pid='te-'+i;
+    o.push('<div class="ent"><span style="float:right"><button class="ebt" onclick="openPanel(\''+pid+'\',D.experience.teaching['+i+'])">Edit</button></span>');
+    o.push('<div class="er"><span class="ep">'+x(e.period)+'</span><div><div class="et">'+x(e.title)+'</div><div class="es">'+x(e.org)+' · '+x(e.hours)+'</div><div class="en">'+x(e.details)+'</div></div></div>');
+    o.push('<div class="ep2" id="'+pid+'"><textarea></textarea><div><button class="sv" onclick="saveP(\''+pid+'\',function(v){D.experience.teaching['+i+']=v})">Save</button><button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>');
+  });
+
+  o.push('<div class="sh"><div class="st">Courses Taught</div></div>');
+  o.push('<div style="background:var(--sf);border:1px solid var(--br);border-radius:6px;overflow:hidden"><table class="at"><thead><tr><th>Code</th><th>Course</th><th>Year(s)</th><th>Hours</th><th>Students</th></tr></thead><tbody>');
+  D.courses.forEach(function(c){o.push('<tr><td><code style="background:var(--acl);padding:1px 6px;border-radius:3px;font-size:12px">'+x(c.code)+'</code></td><td>'+x(c.name)+'</td><td>'+x(c.year)+'</td><td>'+x(c.hours)+'</td><td>'+x(c.students)+'</td></tr>')});
+  o.push('</tbody></table></div>');
+
+  o.push('<div class="sh"><div class="st">Professional Training</div></div>');
+  o.push('<div style="background:var(--sf);border:1px solid var(--br);border-radius:6px;overflow:hidden">');
+  D.training.forEach(function(t){o.push('<div style="display:flex;gap:14px;padding:9px 13px;border-bottom:1px solid var(--br)"><span style="font-size:12px;color:var(--mt);min-width:90px;flex-shrink:0">'+x(t.date)+'</span><span style="font-size:13px">'+x(t.title)+'</span></div>')});
+  o.push('</div>');
+
+  o.push('<div class="sh"><div class="st">Software Skills</div></div>');
+  o.push('<div class="sg">');
+  o.push('<div class="sgc"><h4>Cloud Computing</h4>'+D.skills.computing.map(function(s){return'<span class="stag">'+x(s)+'</span>'}).join('')+'</div>');
+  o.push('<div class="sgc"><h4>Data Analysis</h4>'+D.skills.analysis.map(function(s){return'<span class="stag">'+x(s)+'</span>'}).join('')+'</div>');
+  o.push('<div class="sgc"><h4>Reporting</h4>'+D.skills.reporting.map(function(s){return'<span class="stag">'+x(s)+'</span>'}).join('')+'</div>');
+  o.push('</div>');
+
+  o.push('<div class="sh"><div class="st">Leadership &amp; Volunteering</div></div>');
+  D.leadership.forEach(function(l,i){var pid='ld-'+i;
+    o.push('<div class="ent"><span style="float:right"><button class="ebt" onclick="openPanel(\''+pid+'\',D.leadership['+i+'])">Edit</button></span>');
+    o.push('<div class="er"><span class="ep">'+x(l.period)+'</span><div><div class="et">'+x(l.role)+'</div><div class="es">'+x(l.org)+'</div><div class="en">'+x(l.details)+'</div></div></div>');
+    o.push('<div class="ep2" id="'+pid+'"><textarea></textarea><div><button class="sv" onclick="saveP(\''+pid+'\',function(v){D.leadership['+i+']=v})">Save</button><button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>');
+  });
+
+  o.push('<div class="sh"><div class="st">Administrative Roles</div></div>');
+  D.administrative.forEach(function(a,i){var pid='adm-'+i;
+    o.push('<div class="ent"><span style="float:right"><button class="ebt" onclick="openPanel(\''+pid+'\',D.administrative['+i+'])">Edit</button></span>');
+    o.push('<div class="er"><span class="ep">'+x(a.period)+'</span><div><div class="et">'+x(a.role)+'</div><div class="es">'+x(a.org)+'</div><div class="en">'+x(a.details)+'</div></div></div>');
+    o.push('<div class="ep2" id="'+pid+'"><textarea></textarea><div><button class="sv" onclick="saveP(\''+pid+'\',function(v){D.administrative['+i+']=v})">Save</button><button class="ca" onclick="closeP(\''+pid+'\')">Cancel</button></div></div></div>');
+  });
+
+  o.push('<div class="sh"><div class="st">Professional Memberships</div></div>');
+  D.memberships.forEach(function(m){
+    o.push('<div class="ent"><div class="er"><span class="ep">'+x(m.period)+'</span><div><div class="et">'+x(m.org)+'</div><div class="en">'+x(m.role)+'</div></div></div></div>');
+  });
+  o.push('<div style="height:40px"></div>');
+  document.getElementById('content').innerHTML=o.join('');
+  if(EDIT_MODE){var ecb=document.getElementById('edit-contact-btn');if(ecb)ecb.style.display='inline'}
+  document.getElementById('contact-panel').querySelector('textarea').value=JSON.stringify(D.personal,null,2);
+}
+
+async function fetchCitations(){
+  var cb=document.getElementById('citbar');
+  var pairs=[];
+  ['methodology','applied','submitted','ongoing'].forEach(function(sub){
+    D.publications[sub].forEach(function(p,i){if(p.doi&&p.doi.indexOf('doi.org')>-1)pairs.push({sub:sub,idx:i,doi:extractDOI(p.doi)})});
+  });
+  if(!pairs.length)return;
+  cb.textContent='Updating '+pairs.length+' citations...';
+  var updated=0;
+  for(var k=0;k<pairs.length;k++){
+    var item=pairs[k];
+    try{
+      var r=await fetch('https://api.semanticscholar.org/graph/v1/paper/DOI:'+encodeURIComponent(item.doi)+'?fields=citationCount');
+      if(r.ok){var d=await r.json();if(typeof d.citationCount==='number'){D.publications[item.sub][item.idx].citations=d.citationCount;var badge=document.getElementById(citId(item.sub,item.idx));if(badge)badge.textContent='Cited: '+d.citationCount;updated++;}}
+    }catch(e){}
+    await new Promise(function(res){setTimeout(res,250)});
+  }
+  cb.textContent='Citations live ('+updated+' updated)';
+  setTimeout(function(){cb.textContent=''},5000);
+}
+
+render();
+fetchCitations();
+</script>
+</body>
+</html>
