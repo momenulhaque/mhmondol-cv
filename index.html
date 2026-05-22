@@ -103,15 +103,16 @@ body{background:var(--bg);color:var(--tx);font-family:var(--bf);font-size:16px;l
   <div class="bsep"></div>
   <button class="bb" id="editbtn" onclick="togEdit(this)">&#9998; Edit Mode</button>
   <button class="bb" onclick="window.print()">&#128438; Print / PDF</button>
+  <button class="bb" onclick="exportDOCX(this)">&#128196; Export DOCX</button>
   <button class="bb" onclick="expJSON()">&#8595; Export JSON</button>
   <button class="bb" onclick="document.getElementById('impf').click()">&#8593; Import JSON</button>
   <input type="file" id="impf" accept=".json" style="display:none" onchange="impJSON(this)">
   <div class="bsep"></div>
-  <span style="color:#8ea8c3;font-size:12px">Size:</span>
-  <button class="bb" onclick="setFz(14)">S</button>
-  <button class="bb on" id="fz-m" onclick="setFz(16)">M</button>
-  <button class="bb" onclick="setFz(18)">L</button>
-  <button class="bb" onclick="setFz(20)">XL</button>
+  <span style="color:#8ea8c3;font-size:12px">Font:</span>
+  <button class="bb fzbtn" data-sz="14" onclick="setFz(14)">S</button>
+  <button class="bb fzbtn on" data-sz="16" onclick="setFz(16)">M</button>
+  <button class="bb fzbtn" data-sz="18" onclick="setFz(18)">L</button>
+  <button class="bb fzbtn" data-sz="20" onclick="setFz(20)">XL</button>
 </div>
 
 <div id="content"></div>
@@ -273,12 +274,25 @@ function pubH(p,sub,i){
 function addPubBtn(sub,label){return'<div class="addrow"><button class="addbtn" onclick="openAddPanel(\''+sub+'\')">+ Add '+label+'</button></div>'}
 
 function setFz(sz){
-  document.body.style.fontSize=sz+'px';
-  document.querySelectorAll('#bar .bb').forEach(function(b){
-    if(['S','M','L','XL'].indexOf(b.textContent)>-1)b.classList.remove('on');
-  });
-  var map={14:'S',16:'M',18:'L',20:'XL'};
-  document.querySelectorAll('#bar .bb').forEach(function(b){if(b.textContent===map[sz])b.classList.add('on')});
+  var el=document.getElementById('fz-override');
+  if(!el){el=document.createElement('style');el.id='fz-override';document.head.appendChild(el);}
+  var s=sz/16;
+  el.textContent=[
+    'body{font-size:'+sz+'px !important}',
+    '.cvnm{font-size:'+(Math.round(38*s))+'px !important}',
+    '.st{font-size:'+(Math.round(19*s))+'px !important}',
+    '.et{font-weight:600;font-size:'+(Math.round(16*s))+'px !important}',
+    '.pt{font-size:'+(Math.round(15*s))+'px !important}',
+    '.pa,.pv,.es{font-size:'+(Math.round(15*s))+'px !important}',
+    '.en,.pcon{font-size:'+(Math.round(14*s))+'px !important}',
+    '.at td,.at th{font-size:'+(Math.round(15*s))+'px !important}',
+    '.pty{font-size:'+(Math.round(11*s))+'px !important}',
+    '.pti{font-size:'+(Math.round(13*s))+'px !important}',
+    '.pve{font-size:'+(Math.round(12*s))+'px !important}',
+    '.stag{font-size:'+(Math.round(12*s))+'px !important}',
+    '.bdg{font-size:'+(Math.round(11*s))+'px !important}'
+  ].join(' ');
+  document.querySelectorAll('.fzbtn').forEach(function(b){b.classList.toggle('on',parseInt(b.dataset.sz)===sz)});
 }
 function render(){
   var p=D.personal,o=[];
@@ -438,6 +452,196 @@ async function fetchCitations(){
 
 render();
 fetchCitations();
+
+function exportDOCX(btn) {
+  var orig = btn.textContent;
+  btn.textContent = 'Building...'; btn.disabled = true;
+  function go() {
+    try {
+      var dc = window.docx;
+      var Document=dc.Document,Packer=dc.Packer,Paragraph=dc.Paragraph,TextRun=dc.TextRun,
+          Table=dc.Table,TableRow=dc.TableRow,TableCell=dc.TableCell,
+          AlignmentType=dc.AlignmentType,BorderStyle=dc.BorderStyle,
+          WidthType=dc.WidthType,ShadingType=dc.ShadingType,
+          LevelFormat=dc.LevelFormat,PageNumber=dc.PageNumber,Footer=dc.Footer;
+
+      var NAVY="1A365D",GOLD="B8902A",GRAY="4A4A6A",LG="888888";
+      var PW=12240,MG=1080,CW=PW-2*MG; // 10080 DXA
+      var NB={style:BorderStyle.NONE,size:0,color:"FFFFFF"};
+      var NBS={top:NB,bottom:NB,left:NB,right:NB};
+
+      function rn(t,o){return new TextRun(Object.assign({text:String(t||''),font:"Arial",size:20},o||{}))}
+      function bp(runs,o){return new Paragraph(Object.assign({spacing:{before:0,after:60},children:Array.isArray(runs)?runs:[runs]},o||{}))}
+      function sp(n){return new Paragraph({spacing:{before:0,after:n||80},children:[]})}
+      function hd(t){return new Paragraph({spacing:{before:300,after:80},border:{bottom:{style:BorderStyle.SINGLE,size:8,color:NAVY,space:4}},children:[new TextRun({text:t.toUpperCase(),bold:true,size:24,color:NAVY,font:"Arial"})]})}
+      function sh(t){return new Paragraph({spacing:{before:160,after:60},children:[new TextRun({text:t,bold:true,italics:true,size:22,color:GOLD,font:"Arial"})]})}
+      function twoCol(left,rightPs,lw){
+        var rw=CW-(lw||1800);
+        return new Table({width:{size:CW,type:WidthType.DXA},columnWidths:[lw||1800,rw],rows:[new TableRow({children:[
+          new TableCell({borders:NBS,width:{size:lw||1800,type:WidthType.DXA},margins:{top:0,bottom:0,left:0,right:120},children:[new Paragraph({children:[rn(left,{color:GRAY,size:18})]})]}),
+          new TableCell({borders:NBS,width:{size:rw,type:WidthType.DXA},margins:{top:0,bottom:0,left:0,right:0},children:rightPs})
+        ]})]})}
+
+      var ch=[];
+      var p=D.personal;
+
+      // Header
+      ch.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:0,after:120},children:[new TextRun({text:p.name,bold:true,size:52,color:NAVY,font:"Georgia"})]}));
+      ch.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:0,after:60},children:[rn(p.title,{color:GRAY,size:20})]}));
+      ch.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:0,after:40},children:[rn(p.address+"  |  "+p.phone,{color:GRAY,size:18})]}));
+      ch.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:0,after:200},children:[rn(p.email+"  |  "+p.office,{color:GRAY,size:18})]}));
+
+      // Education
+      ch.push(hd("Education"));
+      D.education.forEach(function(e){
+        ch.push(twoCol(e.period,[
+          new Paragraph({children:[rn(e.degree,{bold:true})]}),
+          new Paragraph({children:[rn(e.institution,{color:GRAY})]}),
+          new Paragraph({children:[rn(e.note,{color:GRAY,size:18,italics:true})]})
+        ]));
+        ch.push(sp(60));
+      });
+
+      // Awards
+      ch.push(hd("Awards & Scholarships"));
+      var acw=[2600,2400,1600,3480];
+      var aHdr=new TableRow({children:["Award","Authority","Amount","Occasion"].map(function(h,i){return new TableCell({shading:{fill:NAVY,type:ShadingType.CLEAR},width:{size:acw[i],type:WidthType.DXA},margins:{top:60,bottom:60,left:80,right:80},borders:NBS,children:[new Paragraph({children:[new TextRun({text:h,bold:true,size:18,color:"FFFFFF",font:"Arial"})]})]})})});
+      var aRows=D.awards.map(function(a,idx){return new TableRow({children:[a.name,a.authority,a.amount,a.occasion].map(function(v,i){return new TableCell({shading:{fill:idx%2===0?"F0F4F8":"FFFFFF",type:ShadingType.CLEAR},width:{size:acw[i],type:WidthType.DXA},margins:{top:50,bottom:50,left:80,right:80},borders:NBS,children:[new Paragraph({children:[new TextRun({text:String(v||''),font:"Arial",size:18,bold:i===0})]})]})})})}); 
+      ch.push(new Table({width:{size:CW,type:WidthType.DXA},columnWidths:acw,rows:[aHdr].concat(aRows)}));
+      ch.push(sp(120));
+
+      // Publications helper
+      function addPubs(pubs,title){
+        ch.push(sh(title));
+        pubs.forEach(function(p){
+          var runs=[rn((p.authors||'')+" ("+(p.year||'n/a')+"). ",{color:GRAY}),rn(p.title,{italics:true}),rn(". "+(p.journal||''),{bold:true})];
+          if(p.vol)runs.push(rn(", "+p.vol));
+          if(p.doi&&p.doi.indexOf('doi')>-1)runs.push(rn(". "+p.doi,{color:"0563C1"}));
+          if(p.status)runs.push(rn(" ["+p.status+"]",{color:GOLD,italics:true}));
+          if(p.citations>0)runs.push(rn(" | Cited: "+p.citations,{color:GRAY,italics:true}));
+          ch.push(new Paragraph({spacing:{before:120,after:20},numbering:{reference:"pubs",level:0},children:runs}));
+          ch.push(bp([rn("Contribution: "+(p.contribution||''),{italics:true,color:LG,size:18})],{indent:{left:360}}));
+        });
+      }
+
+      ch.push(hd("Peer-reviewed Publications"));
+      addPubs(D.publications.methodology,"Methodology-based publications");
+      addPubs(D.publications.applied,"Applied publications");
+      addPubs(D.publications.submitted,"Submitted & under review");
+      addPubs(D.publications.ongoing,"Ongoing (yet to submit)");
+
+      // Projects
+      ch.push(hd("Research Projects"));
+      D.projects.forEach(function(pr){
+        ch.push(bp([rn(pr.title,{bold:true})]));
+        ch.push(bp([rn("Funding: "+pr.funding+"  |  "+pr.duration+"  |  "+pr.amount+"  |  Status: ",{color:GRAY}),rn(pr.status,{bold:true,color:NAVY})]));
+        ch.push(bp([rn("Contribution: "+pr.contribution,{italics:true,color:LG,size:18})],{spacing:{before:0,after:120}}));
+      });
+
+      // Software
+      ch.push(hd("Software"));
+      D.software.forEach(function(s){
+        ch.push(bp([rn(s.name,{bold:true,font:"Courier New",color:NAVY}),rn(" ("+s.type+")  "+s.description)]));
+        if(s.doi)ch.push(bp([rn(s.doi,{color:"0563C1",size:18})],{spacing:{before:0,after:100}}));
+      });
+
+      // Conference presentations
+      ch.push(hd("Conference Presentations"));
+      D.presentations.conference.forEach(function(pr){
+        ch.push(new Paragraph({spacing:{before:100,after:20},numbering:{reference:"pubs",level:0},children:[rn("["+pr.type+"] ",{bold:true,color:NAVY}),rn(pr.title,{italics:true}),rn(". "+pr.venue+". "+pr.date+".")]}));
+      });
+
+      // Seminar presentations
+      ch.push(hd("Seminar Presentations"));
+      D.presentations.seminar.forEach(function(s){
+        ch.push(new Paragraph({spacing:{before:80,after:20},numbering:{reference:"pubs",level:0},children:[rn(s.title,{italics:true}),rn(". "+s.venue+". "+s.date+".")]}));
+      });
+
+      // Theses
+      ch.push(hd("Theses"));
+      D.theses.forEach(function(t){
+        ch.push(twoCol(t.degree+" ("+t.year+")",[
+          new Paragraph({children:[rn(t.title,{italics:true})]}),
+          new Paragraph({children:[rn(t.institution,{color:GRAY})]}),
+          new Paragraph({children:[rn("Supervisor: "+t.supervisor,{color:GRAY,size:18})]})
+        ],1200));
+        ch.push(sp(60));
+      });
+
+      // Research experience
+      ch.push(hd("Research Experience"));
+      D.experience.research.forEach(function(e){
+        ch.push(twoCol(e.period,[
+          new Paragraph({children:[rn(e.title,{bold:true})]}),
+          new Paragraph({children:[rn(e.org+(e.hours?" · "+e.hours:""),{color:GRAY})]}),
+          new Paragraph({children:[rn(e.details,{color:GRAY,size:18})]}),
+          e.supervisor?new Paragraph({children:[rn("Supervisor: "+e.supervisor,{color:LG,size:18,italics:true})]}):new Paragraph({children:[]})
+        ]));
+        ch.push(sp(80));
+      });
+
+      // Teaching
+      ch.push(hd("Teaching Experience"));
+      D.experience.teaching.forEach(function(e){
+        ch.push(twoCol(e.period,[
+          new Paragraph({children:[rn(e.title,{bold:true})]}),
+          new Paragraph({children:[rn(e.org+" · "+e.hours,{color:GRAY})]})
+        ]));
+        ch.push(sp(60));
+      });
+
+      // Leadership
+      if(D.leadership&&D.leadership.length){
+        ch.push(hd("Leadership & Volunteering"));
+        D.leadership.forEach(function(l){
+          ch.push(twoCol(l.period,[
+            new Paragraph({children:[rn(l.role,{bold:true})]}),
+            new Paragraph({children:[rn(l.org,{color:GRAY})]}),
+            new Paragraph({children:[rn(l.details,{color:GRAY,size:18})]})
+          ]));
+          ch.push(sp(60));
+        });
+      }
+
+      // Memberships
+      ch.push(hd("Professional Memberships"));
+      D.memberships.forEach(function(m){
+        ch.push(bp([rn(m.org,{bold:true}),rn("  "+m.role+"  "+m.period,{color:GRAY})]));
+      });
+
+      var doc=new Document({
+        numbering:{config:[{reference:"pubs",levels:[{level:0,format:LevelFormat.DECIMAL,text:"%1.",alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:440,hanging:440}}}}]}]},
+        styles:{default:{document:{run:{font:"Arial",size:20,color:"1A1A2E"}}}},
+        sections:[{
+          properties:{page:{size:{width:12240,height:15840},margin:{top:MG,right:MG,bottom:MG,left:MG}}},
+          footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,children:[rn("Momenul Haque Mondol  |  CV  |  Page ",{size:16,color:LG}),new TextRun({children:[PageNumber.CURRENT],size:16,color:LG,font:"Arial"}),rn(" of ",{size:16,color:LG}),new TextRun({children:[PageNumber.TOTAL_PAGES],size:16,color:LG,font:"Arial"})]})]})},
+          children:ch
+        }]
+      });
+
+      Packer.toBlob(doc).then(function(blob){
+        var url=URL.createObjectURL(blob);
+        var a=document.createElement('a');
+        a.href=url; a.download='CV_Momenul_Haque_Mondol.docx'; a.click();
+        setTimeout(function(){URL.revokeObjectURL(url)},1000);
+        btn.textContent=orig; btn.disabled=false;
+      });
+    } catch(err) {
+      alert('DOCX error: '+err.message);
+      btn.textContent=orig; btn.disabled=false;
+    }
+  }
+
+  if(window.docx){ go(); }
+  else {
+    var s=document.createElement('script');
+    s.src='https://unpkg.com/docx@9.6.1/build/index.umd.js';
+    s.onload=function(){ go(); };
+    s.onerror=function(){ alert('Could not load docx library. Check your internet connection.'); btn.textContent=orig; btn.disabled=false; };
+    document.head.appendChild(s);
+  }
+}
+
 </script>
 </body>
 </html>
